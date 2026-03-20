@@ -1,0 +1,21 @@
+Flight Navigation: Enables the drone to move safely from one location to another. It integrates perception and guidance functions to generate and monitor the flight trajectory.
+
+Perception: Provides real-time information about UAV status and surroundings. It delivers position, velocity, attitude, weather, and obstacle data to other components.
+
+Flight Guidance: Manages trajectory execution during flight. It ensures waypoint navigation, obstacle avoidance, geo-fence compliance, and command execution.
+
+Flight Control: Stabilizes and controls the drone to follow guidance commands. It manipulates thrust, yaw, pitch, and roll to maintain safe flight.
+
+Actuation: Converts control signals into physical motor and actuator actions. It includes mixers and drivers that ensure safe and accurate hardware execution.
+
+Flight Planning: Determines a valid and feasible flight trajectory before execution. It performs waypoint generation and trajectory validation considering constraints such as terrain, weather, and regulations.
+
+Data Management: Handles storage, logging, analytics, and predictive functions. It manages mission data, flight logs, and supports real-time or post-flight analysis.
+
+Payload Management: Controls and coordinates payload operations. It triggers payload actions (e.g., image capture, package release) based on mission objectives.
+
+Health Management: Monitors UAV power, faults, and system diagnostics. It detects failures and triggers corrective or emergency actions.
+
+Mission Management: Plans and supervises mission execution. It defines mission objectives, monitors progress, and enables operator interaction.
+
+External Services: Provide supporting information such as maps, weather data, geo-fence definitions, and regulatory validation for flight and mission planning.

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="RA_Cruise_Control_Model">
+  <eClassifiers xsi:type="ecore:EClass" name="Environment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environment_sensing_and_mapping" eType="//Sensing_and_Mapping"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensing_and_Mapping">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensing_and_mapping_motion_planning" eType="//Motion_Planning"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Motion_Planning">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="motion_planning_vehicle_control" eType="//Vehicle_Control"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vehicle_Control">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vehicle_control_actuator_control" eType="//Actuator_Control"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Actuator_Control">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actuator_control_vehicle" eType="//Vehicle"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vehicle">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vehicle_environment" eType="//Environment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RA_Cruise_Control_Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environments" lowerBound="1" eType="//Environment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensing_and_mappings" lowerBound="1" eType="//Sensing_and_Mapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="motion_plannings" lowerBound="1" eType="//Motion_Planning"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vehicle_controls" lowerBound="1" eType="//Vehicle_Control"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actuator_controls" lowerBound="1" eType="//Actuator_Control"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vehicles" lowerBound="1" eType="//Vehicle"/>
+  </eClassifiers>
+</ecore:EPackage>

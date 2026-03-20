@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gramm:ReferenceArchitectureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gramm="http://example.org/gramm" referenceArchitectureName="Drone System Reference Architecture">
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.perception" name="Perception" mandatory="true" outgoing="conn.perception-guidance"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.guidance" name="Flight Guidance" mandatory="true" incoming="conn.perception-guidance conn.planning-guidance conn.control-guidance" outgoing="conn.guidance-datamgmt conn.guidance-control"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.datamgmt" name="Data Management" mandatory="true" incoming="conn.guidance-datamgmt conn.payload-datamgmt conn.planning-datamgmt" outgoing="conn.datamgmt-planning conn.datamgmt-payload conn.datamgmt-health"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.planning" name="Flight Planning" mandatory="true" incoming="conn.datamgmt-planning conn.mission-planning conn.external-planning" outgoing="conn.planning-guidance conn.planning-datamgmt conn.planning-mission conn.planning-external"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.payload" name="Payload Management" incoming="conn.datamgmt-payload conn.mission-payload" outgoing="conn.payload-datamgmt conn.payload-mission conn.payload-health"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.health" name="Health Management" mandatory="true" incoming="conn.datamgmt-health conn.payload-health conn.control-health" outgoing="conn.health-mission"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.mission" name="Mission Management" mandatory="true" incoming="conn.health-mission conn.payload-mission conn.planning-mission conn.external-mission" outgoing="conn.mission-planning conn.mission-payload conn.mission-control conn.mission-external"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.control" name="Flight Control" mandatory="true" incoming="conn.guidance-control conn.mission-control conn.actuation-control" outgoing="conn.control-guidance conn.control-actuation conn.control-health"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.actuation" name="Actuation" mandatory="true" incoming="conn.control-actuation" outgoing="conn.actuation-control"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.external" name="External Services" incoming="conn.planning-external conn.mission-external" outgoing="conn.external-planning conn.external-mission"/>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.perception-guidance" name="UAV Status &amp; Surroundings" bidirectional="true" sourceRef="comp.perception" targetRef="comp.guidance"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.guidance-datamgmt" name="UAV Status &amp; Surroundings to Data" bidirectional="true" sourceRef="comp.guidance" targetRef="comp.datamgmt"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.datamgmt-planning" name="Geo-fence, Maps, Mission Plan Data" bidirectional="true" sourceRef="comp.datamgmt" targetRef="comp.planning"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.planning-guidance" name="Flight Plan" bidirectional="true" sourceRef="comp.planning" targetRef="comp.guidance"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.guidance-control" name="Desired Position &amp; Attitude Commands" bidirectional="true" sourceRef="comp.guidance" targetRef="comp.control"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.control-guidance" name="UAV Status Feedback" bidirectional="true" sourceRef="comp.control" targetRef="comp.guidance"/>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.datamgmt-payload" name="Position to Payload" bidirectional="true" sourceRef="comp.datamgmt" targetRef="comp.payload"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.payload-datamgmt" name="Payload Data to Storage" bidirectional="true" sourceRef="comp.payload" targetRef="comp.datamgmt"/>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.planning-mission" name="Mission Plan &amp; Constraints" bidirectional="true" sourceRef="comp.planning" targetRef="comp.mission"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.mission-planning" name="Mission Updates" bidirectional="true" sourceRef="comp.mission" targetRef="comp.planning"/>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.mission-payload" name="Payload Commands" bidirectional="true" sourceRef="comp.mission" targetRef="comp.payload"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.payload-mission" name="Payload Status" bidirectional="true" sourceRef="comp.payload" targetRef="comp.mission"/>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.datamgmt-health" name="Trajectory Status &amp; Context" bidirectional="true" sourceRef="comp.datamgmt" targetRef="comp.health"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.payload-health" name="Expected Power/Failures Signals" bidirectional="true" sourceRef="comp.payload" targetRef="comp.health"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.control-health" name="Control Status" bidirectional="true" sourceRef="comp.control" targetRef="comp.health"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.health-mission" name="Health Alerts &amp; Recommendations" bidirectional="true" sourceRef="comp.health" targetRef="comp.mission"/>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.mission-control" name="High-level Commands" bidirectional="true" sourceRef="comp.mission" targetRef="comp.control"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.control-actuation" name="Thrust, Yaw, Pitch, Roll" bidirectional="true" sourceRef="comp.control" targetRef="comp.actuation"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.actuation-control" name="Actuation Feedback" bidirectional="true" sourceRef="comp.actuation" targetRef="comp.control"/>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.external-planning" name="External Flight Plan Services" bidirectional="true" sourceRef="comp.external" targetRef="comp.planning"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.planning-external" name="Flight Plan Exchange" bidirectional="true" sourceRef="comp.planning" targetRef="comp.external"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.external-mission" name="Mission Operator Interface" bidirectional="true" sourceRef="comp.external" targetRef="comp.mission"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.mission-external" name="Mission Reporting &amp; Requests" bidirectional="true" sourceRef="comp.mission" targetRef="comp.external"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.planning-datamgmt" name="Validate Flight Plan" bidirectional="true" sourceRef="comp.planning" targetRef="comp.datamgmt"/>
+</gramm:ReferenceArchitectureModel>

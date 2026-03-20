@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gramm:ReferenceArchitectureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gramm="http://example.org/gramm" referenceArchitectureName="Next-generation Flight Management System Reference Architecture">
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.fplnav" name="FPL and Navigation" mandatory="true" outgoing="conn.fpl-trajpred"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.guidance" name="Guidance" mandatory="true" incoming="conn.pathcorr-guidance conn.trajpred-guidance" outgoing="conn.guidance-pathcorr"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.pathcorr" name="Path Correction" mandatory="true" incoming="conn.monitor-pathcorr conn.guidance-pathcorr conn.trajpred-pathcorr" outgoing="conn.pathcorr-guidance"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.pathmon" name="Path Monitor" mandatory="true" incoming="conn.negotiation-monitor conn.trajpred-monitor" outgoing="conn.monitor-pathcorr conn.monitor-trajpred"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.negotiation" name="Negotiation" mandatory="true" outgoing="conn.negotiation-monitor conn.negotiation-trajpred" incoming="conn.trajpred-negotiation"/>
+
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.trajpred" name="Trajectory Prediction" mandatory="true" incoming="conn.fpl-trajpred conn.monitor-trajpred conn.negotiation-trajpred" outgoing="conn.trajpred-guidance conn.trajpred-pathcorr conn.trajpred-monitor conn.trajpred-negotiation">
+    <child xsi:type="gramm:RAComponent" xmi:id="comp.uavavoid" name="UAV Avoidance" outgoing="conn.uavavoid-cost"/>
+    <child xsi:type="gramm:RAComponent" xmi:id="comp.costfunc" name="Cost Function" incoming="conn.uavavoid-cost conn.db-cost" outgoing="conn.cost-opt"/>
+    <child xsi:type="gramm:RAComponent" xmi:id="comp.trajopt" name="Trajectory Optimization" incoming="conn.cost-opt conn.constraints-opt"/>
+    <child xsi:type="gramm:RAComponent" xmi:id="comp.perfmgmt" name="Performance Management" outgoing="conn.perf-constraints"/>
+    <child xsi:type="gramm:RAComponent" xmi:id="comp.constraints" name="Constraints" incoming="conn.perf-constraints conn.model-constraints" outgoing="conn.constraints-opt"/>
+    <child xsi:type="gramm:RAComponent" xmi:id="comp.databases" name="Databases" outgoing="conn.db-cost conn.db-model" incoming="conn.model-db"/>
+    <child xsi:type="gramm:RAComponent" xmi:id="comp.model" name="Model" outgoing="conn.model-constraints conn.model-db" incoming="conn.db-model"/>
+  </raelements>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.fpl-trajpred" name="FPL Input" sourceRef="comp.fplnav" targetRef="comp.trajpred"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.trajpred-guidance" name="Steering" sourceRef="comp.trajpred" targetRef="comp.guidance"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.guidance-pathcorr" name="Guidance Feedback" sourceRef="comp.guidance" targetRef="comp.pathcorr"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.pathcorr-guidance" name="Corrected Path" sourceRef="comp.pathcorr" targetRef="comp.guidance"/>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.monitor-pathcorr" name="Monitoring Result" sourceRef="comp.pathmon" targetRef="comp.pathcorr"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.trajpred-pathcorr" name="Active Intent" sourceRef="comp.trajpred" targetRef="comp.pathcorr"/>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.monitor-trajpred" name="Predict Motion" bidirectional="true" sourceRef="comp.pathmon" targetRef="comp.trajpred"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.trajpred-monitor" name="Predicted Motion" bidirectional="true" sourceRef="comp.trajpred" targetRef="comp.pathmon"/>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.negotiation-monitor" name="Negotiation Updates" sourceRef="comp.negotiation" targetRef="comp.pathmon"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.negotiation-trajpred" name="Constraints &amp; Intent" bidirectional="true" sourceRef="comp.negotiation" targetRef="comp.trajpred"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.trajpred-negotiation" name="Predictions to Negotiation" bidirectional="true" sourceRef="comp.trajpred" targetRef="comp.negotiation"/>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.uavavoid-cost" name="Avoidance Inputs" sourceRef="comp.uavavoid" targetRef="comp.costfunc"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.db-cost" name="Data for Cost" sourceRef="comp.databases" targetRef="comp.costfunc"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.cost-opt" name="Optimization Objective" sourceRef="comp.costfunc" targetRef="comp.trajopt"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.perf-constraints" name="Performance Constraints" sourceRef="comp.perfmgmt" targetRef="comp.constraints"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.model-constraints" name="Model Constraints" sourceRef="comp.model" targetRef="comp.constraints"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.constraints-opt" name="Constraints to Optimization" sourceRef="comp.constraints" targetRef="comp.trajopt"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.db-model" name="DB to Model" bidirectional="true" sourceRef="comp.databases" targetRef="comp.model"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.model-db" name="Model to DB" bidirectional="true" sourceRef="comp.model" targetRef="comp.databases"/>
+</gramm:ReferenceArchitectureModel>

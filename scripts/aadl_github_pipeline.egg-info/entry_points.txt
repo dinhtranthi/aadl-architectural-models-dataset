@@ -1,0 +1,3 @@
+[console_scripts]
+aadl-github-pipeline = aadl_pipeline.cli:main
+aadl-validate-models = aadl_pipeline.validate_cli:main

@@ -1,0 +1,25 @@
+FPL & Navigation: Manages flight plan inputs and navigation data. It provides route information to downstream guidance and trajectory modules.
+
+Guidance: Translates planned trajectories into steering commands. It ensures the vehicle follows the intended path during flight.
+
+Path Monitor: Observes current trajectory execution and predicts future motion. It detects deviations and provides feedback for corrective actions.
+
+Path Correction: Adjusts the reference path when deviations or conflicts are detected. It refines the trajectory to maintain safety and compliance.
+
+Negotiation: Handles constraint and intent exchange with external entities. It updates operational limits based on predicted motion and system objectives.
+
+Trajectory Prediction: Estimates future vehicle motion based on current state, intent, and constraints. It supports monitoring, correction, and optimization processes.
+
+UAV Avoidance: Detects potential conflicts with other airspace users. It provides avoidance inputs to influence trajectory optimization.
+
+Cost Function: Evaluates candidate trajectories using performance, safety, and efficiency criteria. It assigns optimization metrics for trajectory selection.
+
+Trajectory Optimization: Computes an optimal trajectory under given constraints and cost metrics. It balances safety, performance, and operational objectives.
+
+Performance Management: Monitors and manages vehicle performance parameters. It ensures compliance with operational limits and efficiency targets.
+
+Constraints: Defines operational, physical, and regulatory limits. It restricts trajectory optimization and decision-making processes.
+
+Model: Represents the vehicle’s dynamic and performance characteristics. It provides predictive capability for constraint evaluation and optimization.
+
+Databases: Store flight data, environmental information, and operational parameters. They provide reference data for planning, prediction, and optimization.

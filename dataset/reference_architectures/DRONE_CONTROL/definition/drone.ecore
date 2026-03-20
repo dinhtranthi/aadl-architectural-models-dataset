@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="RADroneSystemModel">
+  <eClassifiers xsi:type="ecore:EClass" name="Perception">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="perception_guidance" eType="//FlightGuidance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flight_Guidance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guidance_datamgmt" eType="//DataManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guidance_control" eType="//FlightControl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guidance_perception" eType="//Perception"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guidance_planning" eType="//FlightPlanning"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data_Management">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datamgmt_planning" eType="//FlightPlanning"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datamgmt_payload" eType="//PayloadManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datamgmt_health" eType="//HealthManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datamgmt_guidance" eType="//FlightGuidance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flight_Planning">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="planning_guidance" eType="//FlightGuidance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="planning_datamgmt" eType="//DataManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="planning_mission" eType="//MissionManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="planning_external" eType="//ExternalServices"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Payload_Management">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="payload_datamgmt" eType="//DataManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="payload_mission" eType="//MissionManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="payload_health" eType="//HealthManagement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Health_Management">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="health_mission" eType="//MissionManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="health_datamgmt" eType="//DataManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="health_payload" eType="//PayloadManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="health_control" eType="//FlightControl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mission_Management">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mission_planning" eType="//FlightPlanning"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mission_payload" eType="//PayloadManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mission_control" eType="//FlightControl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mission_external" eType="//ExternalServices"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mission_health" eType="//HealthManagement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Flight_Control">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="control_guidance" eType="//FlightGuidance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="control_actuation" eType="//Actuation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="control_health" eType="//HealthManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="control_mission" eType="//MissionManagement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Actuation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actuation_control" eType="//FlightControl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="External_Services">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="external_planning" eType="//FlightPlanning"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="external_mission" eType="//MissionManagement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RADroneSystemModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="perceptions" lowerBound="1" eType="//Perception"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flightGuidances" lowerBound="1" eType="//FlightGuidance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataManagements" lowerBound="1" eType="//DataManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flightPlannings" lowerBound="1" eType="//FlightPlanning"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="payloadManagements" eType="//PayloadManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="healthManagements" lowerBound="1" eType="//HealthManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="missionManagements" lowerBound="1" eType="//MissionManagement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flightControls" lowerBound="1" eType="//FlightControl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actuations" lowerBound="1" eType="//Actuation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalServicess" eType="//ExternalServices"/>
+  </eClassifiers>
+</ecore:EPackage>

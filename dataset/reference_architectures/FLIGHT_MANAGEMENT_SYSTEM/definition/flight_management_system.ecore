@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="RA_Flight_Management_System_Model">
+  <eClassifiers xsi:type="ecore:EClass" name="FPL_and_Navigation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fpl_and_navigation_trajectory_prediction" eType="//Trajectory_Prediction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Guidance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guidance_path_correction" eType="//Path_Correction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Path_Correction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path_correction_guidance" eType="//Guidance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Path_Monitor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path_monitor_path_correction" eType="//Path_Correction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path_monitor_trajectory_prediction" eType="//Trajectory_Prediction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Negotiation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="negotiation_path_monitor" eType="//Path_Monitor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="negotiation_trajectory_prediction" eType="//Trajectory_Prediction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trajectory_Prediction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trajectory_prediction_guidance" eType="//Guidance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trajectory_prediction_path_correction" eType="//Path_Correction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trajectory_prediction_path_monitor" eType="//Path_Monitor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trajectory_prediction_negotiation" eType="//Negotiation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UAV_Avoidance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uav_avoidance_cost_function" eType="//Cost_Function"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cost_Function">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cost_function_trajectory_optimization" eType="//Trajectory_Optimization"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trajectory_Optimization"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Performance_Management">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="performance_management_constraints" eType="//Constraints"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraints">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints_trajectory_optimization" eType="//Trajectory_Optimization"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Databases">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="databases_cost_function" eType="//Cost_Function"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="databases_model" eType="//Model"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model_constraints" eType="//Constraints"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model_databases" eType="//Databases"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RA_Flight_Management_System_Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fpl_and_navigations" lowerBound="1" eType="//FPL_and_Navigation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guidances" lowerBound="1" eType="//Guidance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path_corrections" lowerBound="1" eType="//Path_Correction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path_monitors" lowerBound="1" eType="//Path_Monitor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="negotiations" lowerBound="1" eType="//Negotiation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trajectory_predictions" lowerBound="1" eType="//Trajectory_Prediction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uav_avoidances" eType="//UAV_Avoidance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cost_functions" eType="//Cost_Function"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trajectory_optimizations" eType="//Trajectory_Optimization"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="performance_managements" eType="//Performance_Management"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraintss" eType="//Constraints"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="databasess" eType="//Databases"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="models" eType="//Model"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gramm:ReferenceArchitectureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gramm="http://example.org/gramm" referenceArchitectureName="Cruise Control Reference Architecture">
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.environment" name="Environment" mandatory="true" outgoing="conn.env-sensing"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.sensing" name="Sensing and Mapping" mandatory="true" incoming="conn.env-sensing" outgoing="conn.sensing-motion"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.motion" name="Motion Planning" mandatory="true" incoming="conn.sensing-motion" outgoing="conn.motion-vehiclectrl"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.vehiclectrl" name="Vehicle Control" mandatory="true" incoming="conn.motion-vehiclectrl" outgoing="conn.vehiclectrl-actuatorctrl"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.actuatorctrl" name="Actuator Control" mandatory="true" incoming="conn.vehiclectrl-actuatorctrl" outgoing="conn.actuatorctrl-vehicle"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.vehicle" name="Vehicle" mandatory="true" incoming="conn.actuatorctrl-vehicle" outgoing="conn.vehicle-env"/>
+
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.env-sensing" name="Environment Observation" sourceRef="comp.environment" targetRef="comp.sensing"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.sensing-motion" name="Mapped State" sourceRef="comp.sensing" targetRef="comp.motion"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.motion-vehiclectrl" name="Trajectory / Setpoints" sourceRef="comp.motion" targetRef="comp.vehiclectrl"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.vehiclectrl-actuatorctrl" name="Control Commands" sourceRef="comp.vehiclectrl" targetRef="comp.actuatorctrl"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.actuatorctrl-vehicle" name="Actuator Signals" sourceRef="comp.actuatorctrl" targetRef="comp.vehicle"/>
+  <raelements xsi:type="gramm:RAConnector" xmi:id="conn.vehicle-env" name="Vehicle Influence" sourceRef="comp.vehicle" targetRef="comp.environment"/>
+</gramm:ReferenceArchitectureModel>

@@ -1,0 +1,11 @@
+Environment: Represents the physical driving context. It includes roads, obstacles, traffic participants, and dynamic conditions that influence vehicle behavior.
+
+Sensing and Mapping: Processes sensor and map data to estimate the surrounding environment. It fuses inputs from radar, LiDAR, cameras, GPS, and prior maps to build a situational representation.
+
+Motion Planning: Determines the vehicle’s desired route, behavior, and trajectory. It combines route planning, maneuver decisions, and trajectory generation to define a reference path.
+
+Vehicle Control: Computes control commands to track the planned trajectory. It adjusts steering, acceleration, and braking to ensure stable and accurate motion.
+
+Actuator Control: Converts control commands into low-level actuator signals. It applies steering, throttle, and braking torques to execute vehicle movement.
+
+Vehicle: Executes physical motion based on actuator inputs. It interacts with the environment and provides feedback through onboard sensors.

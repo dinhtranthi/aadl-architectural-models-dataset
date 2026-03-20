@@ -1,0 +1,41 @@
+Presentation Layer: Provides user-facing access to the system. It enables interaction through multiple platforms while ensuring a consistent experience.
+
+Web User Interface: Delivers browser-based access to system functionalities. It allows users to manage parking services online without additional installation.
+
+Mobile User Interface: Offers mobile-optimized access for smartphones and tablets. It enables users to perform parking operations anytime and anywhere.
+
+Desktop User Interface: Provides a full-featured desktop interface. It supports advanced operations and administrative tasks.
+
+Business Logic Layer: Implements the core business rules and application workflows. It processes user requests and coordinates system components.
+
+Navigation: Guides users to available parking locations. It uses location and availability data to optimize routing.
+
+Reservation: Manages booking operations for parking spaces. It supports reservation creation, modification, and cancellation.
+
+Administration: Handles system configuration, user management, and access control. It ensures proper governance of system operations.
+
+Parking Map: Maintains spatial information of parking areas. It represents layout, availability, and location details.
+
+Parking Lot: Represents individual parking facilities. It manages capacity, occupancy, and operational status.
+
+Driver: Manages driver profiles and vehicle information. It links users to their parking activities.
+
+Data Management Layer: Collects, stores, processes, and analyzes system data. It supports operational monitoring and decision support.
+
+Data Acquisition: Gathers data from sensors, user inputs, and external systems. It serves as the entry point for raw data.
+
+Data Processing: Transforms raw data into meaningful information. It performs filtering, aggregation, and analysis.
+
+Decision Making: Applies rules or algorithms to processed data. It supports automated actions and recommendations.
+
+Data Storage: Stores structured and unstructured data securely. It ensures reliable retrieval and persistence.
+
+Data Visualisation: Presents processed data in dashboards or graphical formats. It supports monitoring and insight generation.
+
+Security: Protects system resources across all layers. It enforces policies to ensure secure operation.
+
+Confidentiality: Prevents unauthorized access to sensitive data. It ensures data privacy and controlled disclosure.
+
+Integrity: Protects data from unauthorized modification. It guarantees correctness and consistency.
+
+Availability: Ensures continuous access to system services. It supports reliability and fault tolerance.
