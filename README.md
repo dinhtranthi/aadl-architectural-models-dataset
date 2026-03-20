@@ -22,8 +22,6 @@ It includes:
 ---
 
 ## Repository Structure
-
-```text
 .
 ├── dataset/
 │   ├── models/
@@ -104,7 +102,3 @@ Original models retain references to their source repositories.
 
 If you use this dataset, please cite the dataset and the associated paper.
 See `CITATION.cff`.
-
-````
-
----
