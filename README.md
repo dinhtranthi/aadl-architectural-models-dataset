@@ -22,6 +22,8 @@ It includes:
 ---
 
 ## Repository Structure
+
+```text
 .
 ├── dataset/
 │   ├── models/
@@ -52,7 +54,7 @@ It includes:
 ├── figures/
 ├── CITATION.cff
 └── README.md
-
+```
 ---
 
 ## Dataset Content
