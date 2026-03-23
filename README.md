@@ -49,7 +49,8 @@ It includes:
 ├── scripts/
 │
 ├── experiment_protocol/
-│   └── ra_validation_protocol.md
+│   ├── ra_validation_protocol.md
+│   └── ANNOTATION_GUIDELINES.md
 │
 ├── figures/
 ├── CITATION.cff
