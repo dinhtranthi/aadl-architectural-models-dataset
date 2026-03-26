@@ -1,5 +1,3 @@
-Software: Encompasses application logic, algorithms, and control functionalities running on top of hardware resources. It enables intelligent behavior, user interaction, and system coordination.
-
 ML, AI, DL Algorithms: Provide intelligent perception, prediction, and decision-making capabilities. They process collected data to enable automation and adaptive behavior.
 
 Data Collection: Gathers data from sensors, internal networks, and external sources. It prepares structured inputs for analytics and control functions.
@@ -11,8 +9,6 @@ Real-time and Critical Control Software: Executes time-sensitive and safety-crit
 Software Frameworks and Standards (AUTOSAR, ROS, ROS2, RTOS, etc.): Provide middleware and standardized interfaces for application development. They manage communication, scheduling, and hardware abstraction.
 
 Internal Networking Interfaces (CAN, LIN, GigaEthernet, USB 3.X, etc.): Enable data exchange between hardware and software components. They support heterogeneous communication protocols and bandwidth requirements.
-
-Hardware: Represents the physical infrastructure supporting computation, sensing, communication, and actuation. It executes low-level operations required by the software layer.
 
 Sensors: Capture physical signals from the environment. They provide raw data for perception, control, and analytics.
 

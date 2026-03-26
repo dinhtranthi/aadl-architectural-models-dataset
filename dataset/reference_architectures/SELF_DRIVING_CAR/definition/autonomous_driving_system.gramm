@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gramm:ReferenceArchitectureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gramm="http://example.org/gramm" referenceArchitectureName="Autonomous Driving System Reference Architecture">
   <raelements xsi:type="gramm:RAComponent" xmi:id="comp.sensors" name="Sensors" mandatory="true" outgoing="conn.sensors-network"/>
-  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.processing" name="Processing Units" mandatory="true" incoming="conn.network-processing" outgoing="conn.processing-network"/>
-  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.v2x" name="V2X/Cloud Comms" outgoing="conn.v2x-network"/>
-  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.mobileact" name="Mobile Platform/Actuators" mandatory="true" incoming="conn.network-mobileact" outgoing="conn.mobileact-network"/>
-  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.network" name="Internal Networking Interfaces (CAN, LIN, GigaEthernet, USB 3.X, etc)" mandatory="true" incoming="conn.sensors-network conn.processing-network conn.v2x-network conn.mobileact-network conn.frameworks-network" outgoing="conn.network-processing conn.network-mobileact conn.network-frameworks"/>
-  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.frameworks" name="Software Frameworks and Standards (AUTOSAR, ROS, ROS2, RTOS etc.)" mandatory="true" incoming="conn.network-frameworks conn.ml-frameworks conn.datacollection-frameworks conn.uiux-frameworks conn.rtcontrol-frameworks" outgoing="conn.frameworks-network conn.frameworks-ml conn.frameworks-datacollection conn.frameworks-uiux conn.frameworks-rtcontrol"/>
-  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.ml" name="ML, AI, DL Algorithms" mandatory="true" incoming="conn.frameworks-ml" outgoing="conn.ml-frameworks"/>
-  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.datacollection" name="Data Collection" mandatory="true" incoming="conn.frameworks-datacollection" outgoing="conn.datacollection-frameworks"/>
-  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.uiux" name="UI/UX and Infotainment" incoming="conn.frameworks-uiux" outgoing="conn.uiux-frameworks"/>
-  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.rtcontrol" name="Real-time and Critical Control Software" mandatory="true" incoming="conn.frameworks-rtcontrol" outgoing="conn.rtcontrol-frameworks"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.processing" name="Processing_Unit" mandatory="true" incoming="conn.network-processing" outgoing="conn.processing-network"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.v2x" name="V2X_Cloud_Comms" outgoing="conn.v2x-network"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.mobileact" name="Mobile_Platform_Actuators" mandatory="true" incoming="conn.network-mobileact" outgoing="conn.mobileact-network"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.network" name="Internal_Networking_Interfaces" mandatory="true" incoming="conn.sensors-network conn.processing-network conn.v2x-network conn.mobileact-network conn.frameworks-network" outgoing="conn.network-processing conn.network-mobileact conn.network-frameworks"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.frameworks" name="Software_Frameworks_and_Standards" mandatory="true" incoming="conn.network-frameworks conn.ml-frameworks conn.datacollection-frameworks conn.uiux-frameworks conn.rtcontrol-frameworks" outgoing="conn.frameworks-network conn.frameworks-ml conn.frameworks-datacollection conn.frameworks-uiux conn.frameworks-rtcontrol"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.ml" name="ML_AI_DL_Algorithms" mandatory="true" incoming="conn.frameworks-ml" outgoing="conn.ml-frameworks"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.datacollection" name="Data_Collection" mandatory="true" incoming="conn.frameworks-datacollection" outgoing="conn.datacollection-frameworks"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.uiux" name="UI_UX_and_Infotainment" incoming="conn.frameworks-uiux" outgoing="conn.uiux-frameworks"/>
+  <raelements xsi:type="gramm:RAComponent" xmi:id="comp.rtcontrol" name="Real_time_and_Critical_Control_Software" mandatory="true" incoming="conn.frameworks-rtcontrol" outgoing="conn.rtcontrol-frameworks"/>
 
   <raelements xsi:type="gramm:RAConnector" xmi:id="conn.sensors-network" name="Sensor Data" bidirectional="true" sourceRef="comp.sensors" targetRef="comp.network"/>
   <raelements xsi:type="gramm:RAConnector" xmi:id="conn.processing-network" name="Compute Interconnect" bidirectional="true" sourceRef="comp.processing" targetRef="comp.network"/>

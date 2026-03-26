@@ -1,0 +1,346 @@
+{
+  "graph_id": "AadlProjects_smartparking_communicationsupport_impl_1.aaxl2",
+  "ra_reference": {
+    "name": "Smart Parking System Reference Architecture",
+    "components": [
+      {
+        "id": "comp.presentation",
+        "name": "Presentation_Layer",
+        "mandatory": true,
+        "incoming": null,
+        "outgoing": "conn.presentation-business conn.presentation-security",
+        "tag": "raelements",
+        "parent_id": null,
+        "parent_name": null
+      },
+      {
+        "id": "comp.ui.web",
+        "name": "Web_User_Interface",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.presentation",
+        "parent_name": "Presentation_Layer"
+      },
+      {
+        "id": "comp.ui.mobile",
+        "name": "Mobile_User_Interface",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.presentation",
+        "parent_name": "Presentation_Layer"
+      },
+      {
+        "id": "comp.ui.desktop",
+        "name": "Desktop_User_Interface",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.presentation",
+        "parent_name": "Presentation_Layer"
+      },
+      {
+        "id": "comp.business",
+        "name": "Business_Logic_Layer",
+        "mandatory": true,
+        "incoming": "conn.presentation-business",
+        "outgoing": "conn.business-data conn.business-security",
+        "tag": "raelements",
+        "parent_id": null,
+        "parent_name": null
+      },
+      {
+        "id": "comp.nav",
+        "name": "Navigation",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.business",
+        "parent_name": "Business_Logic_Layer"
+      },
+      {
+        "id": "comp.reservation",
+        "name": "Reservation",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.business",
+        "parent_name": "Business_Logic_Layer"
+      },
+      {
+        "id": "comp.admin",
+        "name": "Administration",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.business",
+        "parent_name": "Business_Logic_Layer"
+      },
+      {
+        "id": "comp.parkingmap",
+        "name": "Parking_Map",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.business",
+        "parent_name": "Business_Logic_Layer"
+      },
+      {
+        "id": "comp.parkinglot",
+        "name": "Parking_Lot",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.business",
+        "parent_name": "Business_Logic_Layer"
+      },
+      {
+        "id": "comp.driver",
+        "name": "Driver",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.business",
+        "parent_name": "Business_Logic_Layer"
+      },
+      {
+        "id": "comp.data",
+        "name": "Data_Management_Layer",
+        "mandatory": true,
+        "incoming": "conn.business-data",
+        "outgoing": "conn.data-security",
+        "tag": "raelements",
+        "parent_id": null,
+        "parent_name": null
+      },
+      {
+        "id": "comp.data.acquisition",
+        "name": "Data_Acquisition",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.data",
+        "parent_name": "Data_Management_Layer"
+      },
+      {
+        "id": "comp.data.processing",
+        "name": "Data_Processing",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.data",
+        "parent_name": "Data_Management_Layer"
+      },
+      {
+        "id": "comp.data.decision",
+        "name": "Decision_Making",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.data",
+        "parent_name": "Data_Management_Layer"
+      },
+      {
+        "id": "comp.data.storage",
+        "name": "Data_Storage",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.data",
+        "parent_name": "Data_Management_Layer"
+      },
+      {
+        "id": "comp.data.visualisation",
+        "name": "Data_Visualisation",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.data",
+        "parent_name": "Data_Management_Layer"
+      },
+      {
+        "id": "comp.security",
+        "name": "Security",
+        "mandatory": true,
+        "incoming": "conn.presentation-security conn.business-security conn.data-security",
+        "outgoing": null,
+        "tag": "raelements",
+        "parent_id": null,
+        "parent_name": null
+      },
+      {
+        "id": "comp.security.conf",
+        "name": "Confidentiality",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.security",
+        "parent_name": "Security"
+      },
+      {
+        "id": "comp.security.integ",
+        "name": "Integrity",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.security",
+        "parent_name": "Security"
+      },
+      {
+        "id": "comp.security.avail",
+        "name": "Availability",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.security",
+        "parent_name": "Security"
+      }
+    ],
+    "connectors": [
+      {
+        "id": "conn.presentation-business",
+        "name": "UI Requests",
+        "source": "comp.presentation",
+        "target": "comp.business",
+        "bidirectional": false
+      },
+      {
+        "id": "conn.business-data",
+        "name": "Data Queries/Updates",
+        "source": "comp.business",
+        "target": "comp.data",
+        "bidirectional": false
+      },
+      {
+        "id": "conn.presentation-security",
+        "name": "Security Services",
+        "source": "comp.presentation",
+        "target": "comp.security",
+        "bidirectional": true
+      },
+      {
+        "id": "conn.business-security",
+        "name": "Security Services",
+        "source": "comp.business",
+        "target": "comp.security",
+        "bidirectional": true
+      },
+      {
+        "id": "conn.data-security",
+        "name": "Security Services",
+        "source": "comp.data",
+        "target": "comp.security",
+        "bidirectional": true
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "comp_vehiclesecurecommunication",
+      "graph_node_id": "vehiclesecurecommunication::../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.vehiclesecurecommunication.impl",
+      "name": "vehiclesecurecommunication",
+      "category": "process",
+      "classifier": "../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.vehiclesecurecommunication.impl",
+      "ports": [],
+      "ra_mappings": [
+        {
+          "ra_name": "Security",
+          "ra_id": "comp.security",
+          "confidence": 1,
+          "source_row": 40,
+          "aadl_graph_id": "AadlProjects_smartparking_communicationsupport_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Confidentiality",
+          "ra_id": "comp.security.conf",
+          "confidence": 1,
+          "source_row": 40,
+          "aadl_graph_id": "AadlProjects_smartparking_communicationsupport_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Integrity",
+          "ra_id": "comp.security.integ",
+          "confidence": 1,
+          "source_row": 40,
+          "aadl_graph_id": "AadlProjects_smartparking_communicationsupport_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Security",
+          "ra_id": "comp.security",
+          "confidence": 1,
+          "source_row": 152,
+          "aadl_graph_id": "AadlProjects_smartparking_communicationsupport_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Confidentiality",
+          "ra_id": "comp.security.conf",
+          "confidence": 1,
+          "source_row": 152,
+          "aadl_graph_id": "AadlProjects_smartparking_communicationsupport_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Integrity",
+          "ra_id": "comp.security.integ",
+          "confidence": 1,
+          "source_row": 152,
+          "aadl_graph_id": "AadlProjects_smartparking_communicationsupport_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Security",
+          "ra_id": "comp.security",
+          "confidence": 1,
+          "source_row": 171,
+          "aadl_graph_id": "AadlProjects_smartparking_communicationsupport_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Confidentiality",
+          "ra_id": "comp.security.conf",
+          "confidence": 1,
+          "source_row": 171,
+          "aadl_graph_id": "AadlProjects_smartparking_communicationsupport_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Integrity",
+          "ra_id": "comp.security.integ",
+          "confidence": 1,
+          "source_row": 171,
+          "aadl_graph_id": "AadlProjects_smartparking_communicationsupport_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        }
+      ]
+    }
+  ],
+  "edges": [],
+  "meta": {
+    "source_graphs_file": "SMART_PARKING_graphs.json",
+    "source_ra_grammar": "smartparking.gramm",
+    "source_mapping_labels": "all_SMART_PARKING_connection_components_with_ra_component.csv",
+    "enable_global_fallback": true
+  }
+}

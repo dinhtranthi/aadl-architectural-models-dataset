@@ -1,0 +1,897 @@
+{
+  "graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+  "ra_reference": {
+    "name": "Smart Parking System Reference Architecture",
+    "components": [
+      {
+        "id": "comp.presentation",
+        "name": "Presentation_Layer",
+        "mandatory": true,
+        "incoming": null,
+        "outgoing": "conn.presentation-business conn.presentation-security",
+        "tag": "raelements",
+        "parent_id": null,
+        "parent_name": null
+      },
+      {
+        "id": "comp.ui.web",
+        "name": "Web_User_Interface",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.presentation",
+        "parent_name": "Presentation_Layer"
+      },
+      {
+        "id": "comp.ui.mobile",
+        "name": "Mobile_User_Interface",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.presentation",
+        "parent_name": "Presentation_Layer"
+      },
+      {
+        "id": "comp.ui.desktop",
+        "name": "Desktop_User_Interface",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.presentation",
+        "parent_name": "Presentation_Layer"
+      },
+      {
+        "id": "comp.business",
+        "name": "Business_Logic_Layer",
+        "mandatory": true,
+        "incoming": "conn.presentation-business",
+        "outgoing": "conn.business-data conn.business-security",
+        "tag": "raelements",
+        "parent_id": null,
+        "parent_name": null
+      },
+      {
+        "id": "comp.nav",
+        "name": "Navigation",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.business",
+        "parent_name": "Business_Logic_Layer"
+      },
+      {
+        "id": "comp.reservation",
+        "name": "Reservation",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.business",
+        "parent_name": "Business_Logic_Layer"
+      },
+      {
+        "id": "comp.admin",
+        "name": "Administration",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.business",
+        "parent_name": "Business_Logic_Layer"
+      },
+      {
+        "id": "comp.parkingmap",
+        "name": "Parking_Map",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.business",
+        "parent_name": "Business_Logic_Layer"
+      },
+      {
+        "id": "comp.parkinglot",
+        "name": "Parking_Lot",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.business",
+        "parent_name": "Business_Logic_Layer"
+      },
+      {
+        "id": "comp.driver",
+        "name": "Driver",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.business",
+        "parent_name": "Business_Logic_Layer"
+      },
+      {
+        "id": "comp.data",
+        "name": "Data_Management_Layer",
+        "mandatory": true,
+        "incoming": "conn.business-data",
+        "outgoing": "conn.data-security",
+        "tag": "raelements",
+        "parent_id": null,
+        "parent_name": null
+      },
+      {
+        "id": "comp.data.acquisition",
+        "name": "Data_Acquisition",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.data",
+        "parent_name": "Data_Management_Layer"
+      },
+      {
+        "id": "comp.data.processing",
+        "name": "Data_Processing",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.data",
+        "parent_name": "Data_Management_Layer"
+      },
+      {
+        "id": "comp.data.decision",
+        "name": "Decision_Making",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.data",
+        "parent_name": "Data_Management_Layer"
+      },
+      {
+        "id": "comp.data.storage",
+        "name": "Data_Storage",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.data",
+        "parent_name": "Data_Management_Layer"
+      },
+      {
+        "id": "comp.data.visualisation",
+        "name": "Data_Visualisation",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.data",
+        "parent_name": "Data_Management_Layer"
+      },
+      {
+        "id": "comp.security",
+        "name": "Security",
+        "mandatory": true,
+        "incoming": "conn.presentation-security conn.business-security conn.data-security",
+        "outgoing": null,
+        "tag": "raelements",
+        "parent_id": null,
+        "parent_name": null
+      },
+      {
+        "id": "comp.security.conf",
+        "name": "Confidentiality",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.security",
+        "parent_name": "Security"
+      },
+      {
+        "id": "comp.security.integ",
+        "name": "Integrity",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.security",
+        "parent_name": "Security"
+      },
+      {
+        "id": "comp.security.avail",
+        "name": "Availability",
+        "mandatory": null,
+        "incoming": null,
+        "outgoing": null,
+        "tag": "child",
+        "parent_id": "comp.security",
+        "parent_name": "Security"
+      }
+    ],
+    "connectors": [
+      {
+        "id": "conn.presentation-business",
+        "name": "UI Requests",
+        "source": "comp.presentation",
+        "target": "comp.business",
+        "bidirectional": false
+      },
+      {
+        "id": "conn.business-data",
+        "name": "Data Queries/Updates",
+        "source": "comp.business",
+        "target": "comp.data",
+        "bidirectional": false
+      },
+      {
+        "id": "conn.presentation-security",
+        "name": "Security Services",
+        "source": "comp.presentation",
+        "target": "comp.security",
+        "bidirectional": true
+      },
+      {
+        "id": "conn.business-security",
+        "name": "Security Services",
+        "source": "comp.business",
+        "target": "comp.security",
+        "bidirectional": true
+      },
+      {
+        "id": "conn.data-security",
+        "name": "Security Services",
+        "source": "comp.data",
+        "target": "comp.security",
+        "bidirectional": true
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "comp_system",
+      "graph_node_id": "SYSTEM::AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+      "name": "SYSTEM",
+      "category": "system",
+      "classifier": "",
+      "ports": [
+        "local_travlr_info",
+        "interactv_travle_info",
+        "personal_loca",
+        "transit_user_info",
+        "traveler_req",
+        "traveler_src_update"
+      ],
+      "ra_mappings": [
+        {
+          "ra_name": "Administration",
+          "ra_id": "comp.admin",
+          "confidence": 1,
+          "source_row": 0,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Desktop_User_Interface",
+          "ra_id": "comp.ui.desktop",
+          "confidence": 1,
+          "source_row": 0,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Mobile_User_Interface",
+          "ra_id": "comp.ui.mobile",
+          "confidence": 1,
+          "source_row": 104,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 104,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Parking_Lot",
+          "ra_id": "comp.parkinglot",
+          "confidence": 1,
+          "source_row": 105,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Data_Acquisition",
+          "ra_id": "comp.data.acquisition",
+          "confidence": 1,
+          "source_row": 105,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Data_Management_Layer",
+          "ra_id": "comp.data",
+          "confidence": 1,
+          "source_row": 111,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 116,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Business_Logic_Layer",
+          "ra_id": "comp.business",
+          "confidence": 1,
+          "source_row": 117,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 130,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 130,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Reservation",
+          "ra_id": "comp.reservation",
+          "confidence": 1,
+          "source_row": 140,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Mobile_User_Interface",
+          "ra_id": "comp.ui.mobile",
+          "confidence": 1,
+          "source_row": 145,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 145,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 153,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 153,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 156,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Mobile_User_Interface",
+          "ra_id": "comp.ui.mobile",
+          "confidence": 1,
+          "source_row": 159,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 159,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Mobile_User_Interface",
+          "ra_id": "comp.ui.mobile",
+          "confidence": 1,
+          "source_row": 178,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 178,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 181,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Data_Management_Layer",
+          "ra_id": "comp.data",
+          "confidence": 1,
+          "source_row": 181,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Business_Logic_Layer",
+          "ra_id": "comp.business",
+          "confidence": 1,
+          "source_row": 194,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Mobile_User_Interface",
+          "ra_id": "comp.ui.mobile",
+          "confidence": 1,
+          "source_row": 207,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 207,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Parking_Lot",
+          "ra_id": "comp.parkinglot",
+          "confidence": 1,
+          "source_row": 214,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Business_Logic_Layer",
+          "ra_id": "comp.business",
+          "confidence": 1,
+          "source_row": 214,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Parking_Lot",
+          "ra_id": "comp.parkinglot",
+          "confidence": 1,
+          "source_row": 219,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Business_Logic_Layer",
+          "ra_id": "comp.business",
+          "confidence": 1,
+          "source_row": 219,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Business_Logic_Layer",
+          "ra_id": "comp.business",
+          "confidence": 1,
+          "source_row": 225,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        }
+      ]
+    },
+    {
+      "id": "comp_pers_interactv_trav_info",
+      "graph_node_id": "persInteractvTravInfo::../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.persInteractvTravInfo.impl",
+      "name": "persInteractvTravInfo",
+      "category": "system",
+      "classifier": "../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.persInteractvTravInfo.impl",
+      "ports": [
+        "interactv_travle_info",
+        "traveler_req",
+        "traveler_src_update"
+      ],
+      "ra_mappings": [
+        {
+          "ra_name": "Mobile_User_Interface",
+          "ra_id": "comp.ui.mobile",
+          "confidence": 1,
+          "source_row": 49,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 49,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Mobile_User_Interface",
+          "ra_id": "comp.ui.mobile",
+          "confidence": 1,
+          "source_row": 208,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 208,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        }
+      ]
+    },
+    {
+      "id": "comp_personal_info",
+      "graph_node_id": "personal_info::../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.personal_info.impl",
+      "name": "personal_info",
+      "category": "process",
+      "classifier": "../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.personal_info.impl",
+      "ports": [
+        "interactv_travle_info",
+        "traveler_req",
+        "traveler_src_update"
+      ],
+      "ra_mappings": [
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 50,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Confidentiality",
+          "ra_id": "comp.security.conf",
+          "confidence": 1,
+          "source_row": 50,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 179,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Confidentiality",
+          "ra_id": "comp.security.conf",
+          "confidence": 1,
+          "source_row": 179,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 209,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Confidentiality",
+          "ra_id": "comp.security.conf",
+          "confidence": 1,
+          "source_row": 209,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        }
+      ]
+    },
+    {
+      "id": "comp_info_thread",
+      "graph_node_id": "info_thread::../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.info_thread.impl",
+      "name": "info_thread",
+      "category": "thread",
+      "classifier": "../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.info_thread.impl",
+      "ports": [
+        "interactv_travle_info",
+        "traveler_req",
+        "traveler_src_update"
+      ],
+      "ra_mappings": [
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 51,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Mobile_User_Interface",
+          "ra_id": "comp.ui.mobile",
+          "confidence": 1,
+          "source_row": 51,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 180,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Mobile_User_Interface",
+          "ra_id": "comp.ui.mobile",
+          "confidence": 1,
+          "source_row": 180,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 210,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Mobile_User_Interface",
+          "ra_id": "comp.ui.mobile",
+          "confidence": 1,
+          "source_row": 210,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        }
+      ]
+    },
+    {
+      "id": "comp_personallocmanagement",
+      "graph_node_id": "personallocmanagement::../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.personallocmanagement.impl",
+      "name": "personallocmanagement",
+      "category": "system",
+      "classifier": "../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.personallocmanagement.impl",
+      "ports": [
+        "personal_loca"
+      ],
+      "ra_mappings": [
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 52,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 52,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 211,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 211,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        }
+      ]
+    },
+    {
+      "id": "comp_travnavmapdatabase",
+      "graph_node_id": "travnavmapdatabase::../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.travnavmapdatabase.impl",
+      "name": "travnavmapdatabase",
+      "category": "process",
+      "classifier": "../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.travnavmapdatabase.impl",
+      "ports": [
+        "personal_loca"
+      ],
+      "ra_mappings": [
+        {
+          "ra_name": "Parking_Map",
+          "ra_id": "comp.parkingmap",
+          "confidence": 1,
+          "source_row": 53,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Data_Storage",
+          "ra_id": "comp.data.storage",
+          "confidence": 1,
+          "source_row": 53,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Parking_Map",
+          "ra_id": "comp.parkingmap",
+          "confidence": 1,
+          "source_row": 154,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Data_Storage",
+          "ra_id": "comp.data.storage",
+          "confidence": 1,
+          "source_row": 154,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Parking_Map",
+          "ra_id": "comp.parkingmap",
+          "confidence": 1,
+          "source_row": 212,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Data_Storage",
+          "ra_id": "comp.data.storage",
+          "confidence": 1,
+          "source_row": 212,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        }
+      ]
+    },
+    {
+      "id": "comp_driverloc",
+      "graph_node_id": "driverloc::../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.driverloc.impl",
+      "name": "driverloc",
+      "category": "thread",
+      "classifier": "../../github/AadlProjects/smartpark/smartparking.aadl#smartparking.driverloc.impl",
+      "ports": [
+        "personal_loca"
+      ],
+      "ra_mappings": [
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 54,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 54,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 155,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 155,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Driver",
+          "ra_id": "comp.driver",
+          "confidence": 1,
+          "source_row": 213,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        },
+        {
+          "ra_name": "Navigation",
+          "ra_id": "comp.nav",
+          "confidence": 1,
+          "source_row": 213,
+          "aadl_graph_id": "AadlProjects_smartparking_persinfodev_impl_1.aaxl2",
+          "match_mode": "global_fallback"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "comp_system",
+      "target": "comp_info_thread",
+      "type": "connection",
+      "src_port": "interactv_travle_info",
+      "dst_port": "interactv_travle_info",
+      "raw": {
+        "source": "//@featureInstance.1",
+        "destination": "//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.0"
+      }
+    },
+    {
+      "source": "comp_info_thread",
+      "target": "comp_system",
+      "type": "connection",
+      "src_port": "traveler_src_update",
+      "dst_port": "traveler_src_update",
+      "raw": {
+        "source": "//@componentInstance.0/@componentInstance.0/@componentInstance.0/@featureInstance.2",
+        "destination": "//@featureInstance.5"
+      }
+    },
+    {
+      "source": "comp_driverloc",
+      "target": "comp_system",
+      "type": "connection",
+      "src_port": "personal_loca",
+      "dst_port": "personal_loca",
+      "raw": {
+        "source": "//@componentInstance.1/@componentInstance.0/@componentInstance.0/@featureInstance.0",
+        "destination": "//@featureInstance.2"
+      }
+    }
+  ],
+  "meta": {
+    "source_graphs_file": "SMART_PARKING_graphs.json",
+    "source_ra_grammar": "smartparking.gramm",
+    "source_mapping_labels": "all_SMART_PARKING_connection_components_with_ra_component.csv",
+    "enable_global_fallback": true
+  }
+}
