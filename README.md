@@ -49,8 +49,10 @@ It includes:
 ├── scripts/
 │
 ├── experiment_protocol/
-│   ├── ra_validation_protocol.md
-│   └── ANNOTATION_GUIDELINES.md
+│   ├── model_clustering_annotation_guidelines.md
+│   ├── model_clustering_protocol.md
+│   ├── ra_mapping_annotation_guidelines.md
+│   └── ra_mapping_validation_protocol.md
 │
 ├── figures/
 ├── CITATION.cff
@@ -64,8 +66,8 @@ It includes:
 * **Metadata** (`dataset/metadata.csv`): provenance and structural information
 * **Annotations** (`dataset/annotations/`):
 
-  * 13 generic domains
-  * 49 specific problem clusters
+  * 7 generic domains
+  * 52 specific problem clusters
   * RA component mappings
 * **Reference Architectures**: multiple domains (e.g., SMART_HOME, SELF_DRIVING_CAR, DRONE_CONTROL)
 * **Schema**: JSON schemas for structured data access
