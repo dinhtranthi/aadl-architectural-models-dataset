@@ -107,3 +107,12 @@ Original models retain references to their source repositories.
 
 If you use this dataset, please cite the dataset and the associated paper.
 See `CITATION.cff`.
+
+---
+
+## Dataset DOI
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19819886.svg)](https://doi.org/10.5281/zenodo.19819886)
+
+This dataset is archived on Zenodo:
+https://doi.org/10.5281/zenodo.19819886
